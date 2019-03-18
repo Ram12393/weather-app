@@ -1,5 +1,4 @@
 var map, infoWindow;
-var x=document.getElementById("map");
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -20,7 +19,7 @@ function initMap() {
             };
             console.log(position.coords.latitude);
             console.log(position.coords.longitude);
-            displayLocation(position.coords.latitude,position.coords.longitude)
+            displayLocation(position.coords.latitude, position.coords.longitude)
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
@@ -44,6 +43,8 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 function displayLocation(latitude, longitude) {
     var geocoder;
+    var x = document.getElementById("location");
+
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(latitude, longitude);
 
@@ -53,20 +54,22 @@ function displayLocation(latitude, longitude) {
         function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 if (results[0]) {
+                    console.log(results);
                     var add = results[0].formatted_address;
                     var value = add.split(",");
-
+                    console.log(value);
                     count = value.length;
                     country = value[count - 1];
                     state = value[count - 2];
                     city = value[count - 3];
                     console.log(city);
-                    // x.innerHTML = "city name is: " + city;
+                    x.innerHTML = "city name is: " + city;
+
                 } else {
-                    // x.innerHTML = "address not found";
+                    x.innerHTML = "address not found";
                 }
             } else {
-                // x.innerHTML = "Geocoder failed due to: " + status;
+                x.innerHTML = "Geocoder failed due to: " + status;
             }
         }
     );
