@@ -19,6 +19,7 @@ function initMap() {
             };
             console.log(position.coords.latitude);
             console.log(position.coords.longitude);
+            getWeatherInfo(position.coords.latitude, position.coords.longitude)
             displayLocation(position.coords.latitude, position.coords.longitude)
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
@@ -73,4 +74,17 @@ function displayLocation(latitude, longitude) {
             }
         }
     );
+}
+
+function getWeatherInfo(lat, lang) {
+    var x = document.getElementById("temp");
+    const http = new XMLHttpRequest()
+    http.open("GET", "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lang + "&units=metric&appid=4d798cc71b479bc0e901189ab9a3ffa1")
+    http.send()
+    http.onload = () => {
+        let temp = http.responseText;
+        let jsonParse = JSON.parse(temp)
+        x.innerHTML = (jsonParse.main.temp).toFixed(0)+"  C"
+        document.getElementById("icon").src = "http://openweathermap.org/img/w/" + jsonParse.weather[0].icon + ".png"
+    }
 }
