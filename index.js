@@ -86,5 +86,6 @@ function getWeatherInfo(lat, lang) {
         let jsonParse = JSON.parse(temp)
         x.innerHTML = (jsonParse.main.temp).toFixed(0)+"  C"
         document.getElementById("icon").src = "http://openweathermap.org/img/w/" + jsonParse.weather[0].icon + ".png"
+        // dfsf
     }
 }
