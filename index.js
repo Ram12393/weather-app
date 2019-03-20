@@ -64,7 +64,7 @@ function displayLocation(latitude, longitude) {
                     state = value[count - 2];
                     city = value[count - 3];
                     console.log(city);
-                    x.innerHTML = "city name is: " + city;
+                    x.innerHTML =  city;
 
                 } else {
                     x.innerHTML = "address not found";
@@ -84,6 +84,7 @@ function getWeatherInfo(lat, lang) {
     http.onload = () => {
         let temp = http.responseText;
         let jsonParse = JSON.parse(temp)
+        console.log(jsonParse)
         x.innerHTML = (jsonParse.main.temp).toFixed(0)+"  C"
         document.getElementById("icon").src = "http://openweathermap.org/img/w/" + jsonParse.weather[0].icon + ".png"
         // dfsf

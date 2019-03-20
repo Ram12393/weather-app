@@ -1,0 +1,49 @@
+body {
+    background-image: url('/images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: -webkit-fill-available;
+}
+
+.weather-info {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 6vh;
+    font-weight: 600;
+    font-family: monospace;
+
+}
+
+h4 {
+
+    background: linear-gradient(to right, #ff8a00, #da1b60);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    text-shadow: none;
+}
+
+.weather-wrapper {
+    padding: 8%;
+    border: 15px solid #cecece;
+    border-radius: 5px;
+    background: transparent;
+    color: #fff;
+    background: #47525d87;
+    width: 250px;
+    height: 100px;
+    
+}
+
+#location {
+    padding-bottom: 5%
+}
+
+.location-wrapper {
+    display: flex;
+    justify-content: center;
+}

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather APP</title>
+    <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpUQyoOBLq-px2M-iV44Oe9Xg6rDt20XI&callback=initMap"
@@ -13,11 +14,17 @@
 </head>
 
 <body>
-    <div id="map"></div>
-    <div id ="location"></div>
-    <div id ="temp"></div>
-    <!-- <div id="icon"></div> -->
-    <img src="" id="icon" alt="">
+    <div class="weather-info">
+        <h4>Weather in your City</h4>
+        <div class="weather-wrapper">
+            <div id="map"></div>
+            <div id="location"></div>
+            <div class="location-wrapper">
+                <div id="temp"></div>
+                <img src="" id="icon" alt="">
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
