@@ -1,8 +1,8 @@
 body {
     background-image: url('/images/bg.jpg');
-    background-size: cover;
+    background-size: auto;
     background-repeat: no-repeat;
-    height: -webkit-fill-available;
+    height: 93vh;
 }
 
 .weather-info {
@@ -36,7 +36,7 @@ h4 {
     background: #47525d87;
     width: 250px;
     height: 100px;
-    
+
 }
 
 #location {
@@ -46,4 +46,9 @@ h4 {
 .location-wrapper {
     display: flex;
     justify-content: center;
+}
+
+p {
+    text-align: center;
+    color: #fff;
 }
